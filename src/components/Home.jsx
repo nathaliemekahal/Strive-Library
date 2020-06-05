@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import WarningSign from './WarningSign'
 import {Container,Row,Col,Card,Button,Dropdown,DropdownButton,Badge} from 'react-bootstrap';
+import Commentt from './Commentt'
 
 
 let bookCategories=["fantasy","horror","history","romance","scifi"]
@@ -16,7 +17,7 @@ class Home extends Component {
     constructor(props){
         super(props)
         this.state={
-            bookSelected:null,
+            bookSelected:books.fantasy[0],
             book:books.fantasy.slice(0,12),
             categorySelected:"fantasy",
         }
@@ -66,6 +67,7 @@ class Home extends Component {
             </Row>
            
         </Container>
+        <Commentt book = {this.state.bookSelected}/>
         </>
         );
     }
