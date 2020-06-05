@@ -10,7 +10,8 @@ class Commentt extends React.Component{
       comment : '',
       rate :'',
       elementId: ''
-     }
+     },
+     reviews:''
     }
   }
 
@@ -25,7 +26,7 @@ class Commentt extends React.Component{
         })
       })
       let parsedJson = await response.json()
-      console.log(parsedJson)
+      this.setState({reviews:parsedJson})
      }
 
   updateReview =(event)=>{
@@ -82,6 +83,9 @@ class Commentt extends React.Component{
             Submit
           </Button>
         </Form>
+        
+        <h6>Reviews</h6>
+          
         </Card.Body>
       </Card>
       }
